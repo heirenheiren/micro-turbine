@@ -14,7 +14,12 @@ logger:
   config: 
     classpath: logback.xml
   path: /Users/zhou/Desktop
+management:
+  port: 8084
 turbine: 
-  app-config: micro-service
-  cluster-name-expression: default
+  app-config: micro-consumer#配置监控服务的列表，表明监控哪些服务多个使用","分割
   combine-host-port: true
+  cluster-name-expression: new String("default")
+  #aggregator: 
+    #cluster-config: default#指定聚合哪些集群,多个使用","分割，默认为default
+  instanceUrlSuffix: /hystrix.stream
